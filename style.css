@@ -23,26 +23,21 @@ body {
 }
 
 .mobile-menu.active {
-    max-height: 500px;
+    max-height: 500px; /* Set to a reasonable max-height for open state */
     opacity: 1;
 }
 
-
-
-
-
 header {
-            background: linear-gradient(135deg, #2c3e50, #3498db);
-            color: white;
-            text-align: center;
-            padding: 4rem 2rem;
-        }
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    color: white;
+    text-align: center;
+    padding: 4rem 2rem;
+}
 
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
 
 header p {
     font-size: 1.2rem;
@@ -89,10 +84,11 @@ header p {
     }
 }
 
-    .sample-img {
-        width: 120px;
-        height: 80px;
-    }
+.sample-img {
+    width: 120px;
+    height: 80px;
+}
+
 /* Animations */
 @keyframes fadeIn {
     from { opacity: 0; }
@@ -125,17 +121,20 @@ header p {
     padding: 3rem 0;
     min-height: 100vh;
 }
+
 .about-section h2 {
     font-size: 2.5rem;
     color: #2c3e50;
     margin-bottom: 1.5rem;
     text-align: center;
 }
+
 .about-section p {
     font-size: 1.1rem;
     color: #34495e;
     line-height: 1.6;
 }
+
 .section-card {
     background: white;
     border-radius: 10px;
@@ -144,30 +143,36 @@ header p {
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
 }
+
 .section-card:hover {
     transform: translateY(-5px);
 }
+
 .section-card h3 {
     color: #3498db;
     font-size: 1.8rem;
     margin-bottom: 1rem;
 }
+
 .section-card ul {
     list-style-type: none;
     padding-left: 0;
 }
+
 .section-card ul li {
     font-size: 1rem;
     margin-bottom: 0.5rem;
     position: relative;
     padding-left: 1.5rem;
 }
+
 .section-card ul li::before {
     content: "✔";
     color: #3498db;
     position: absolute;
     left: 0;
 }
+
 .profile-img-about {
     max-width: 250px;
     border-radius: 50%;
@@ -175,18 +180,22 @@ header p {
     display: block;
     transition: transform 0.3s ease;
 }
+
 .profile-img-about:hover {
     transform: scale(1.05);
 }
+
 .social-links a {
     margin: 0 10px;
     font-size: 1.2rem;
     color: #3498db;
     text-decoration: none;
 }
+
 .social-links a:hover {
     color: #2c3e50;
 }
+
 @media (max-width: 768px) {
     .about-section h2 {
         font-size: 2rem;
@@ -198,10 +207,3 @@ header p {
         max-width: 200px;
     }
 }
-
-
-
-
-
-
-

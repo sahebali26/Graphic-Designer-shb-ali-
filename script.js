@@ -24,8 +24,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileMenu = document.querySelector('.mobile-menu');
     if (navbarToggler && mobileMenu) {
         navbarToggler.addEventListener('click', () => {
+            const isActive = mobileMenu.classList.contains('active');
             mobileMenu.classList.toggle('active');
             navbarToggler.classList.toggle('active');
+            // Ensure smooth transition by setting max-height explicitly when closing
+            if (!isActive) {
+                mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+            } else {
+                mobileMenu.style.maxHeight = '0';
+            }
         });
     }
 
@@ -34,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', () => {
             mobileMenu.classList.remove('active');
             navbarToggler.classList.remove('active');
+            mobileMenu.style.maxHeight = '0';
         });
     });
 
