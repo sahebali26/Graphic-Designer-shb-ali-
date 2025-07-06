@@ -1,10 +1,35 @@
 body {
     padding-top: 70px;
+    font-family: 'Inter', sans-serif;
 }
 
 .navbar {
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
 }
+
+.navbar-toggler i {
+    transition: transform 0.3s ease;
+}
+
+.navbar-toggler.active i {
+    transform: rotate(90deg);
+}
+
+.mobile-menu {
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.mobile-menu.active {
+    max-height: 500px;
+    opacity: 1;
+}
+
+
+
+
 
 header {
             background: linear-gradient(135deg, #2c3e50, #3498db);
@@ -174,72 +199,9 @@ header p {
     }
 }
 
-* Study Materials Section */
-.materials {
-    padding: 50px 20px;
-    text-align: center;
-}
 
-.materials h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #376370;
-}
 
-.materials p {
-    font-size: 1.2rem;
-    margin-bottom: 40px;
-    color: #333;
-}
 
-.material-list {
-    margin-bottom: 40px;
-}
 
-.material-list h3 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    color: #376370;
-}
 
-.subject-grid {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 20px;
-}
 
-.subject {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 30%;
-    text-align: left;
-}
-
-.subject h4 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    color: #376370;
-}
-
-.subject ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.subject ul li {
-    margin-bottom: 10px;
-}
-
-.subject ul li a {
-    text-decoration: none;
-    color: #333;
-    font-size: 1rem;
-    transition: color 0.3s;
-}
-
-.subject ul li a:hover {
-    color: #ff6f61;
-}

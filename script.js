@@ -4,8 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
-            // Check if the href is an internal link (starts with # or points to index.html#)
-            if (targetId.startsWith('#') || targetId.includes('index.html#')) {
+            if (targetId.includes('.html')) {
+                window.location.href = targetId;
+            } else {
                 const sectionId = targetId.split('#')[1];
                 const targetElement = document.querySelector(`#${sectionId}`);
                 if (targetElement) {
@@ -14,23 +15,29 @@ document.addEventListener('DOMContentLoaded', () => {
                         behavior: 'smooth'
                     });
                 }
-            } else {
-                // Navigate to other pages (e.g., index.html, AboutMe.html)
-                window.location.href = targetId;
             }
         });
     });
 
-    // Mobile menu toggle for Bootstrap navbar
+    // Mobile menu toggle
     const navbarToggler = document.querySelector('.navbar-toggler');
-    const navbarCollapse = document.querySelector('.navbar-collapse');
-    if (navbarToggler && navbarCollapse) {
+    const mobileMenu = document.querySelector('.mobile-menu');
+    if (navbarToggler && mobileMenu) {
         navbarToggler.addEventListener('click', () => {
-            navbarCollapse.classList.toggle('show');
+            mobileMenu.classList.toggle('active');
+            navbarToggler.classList.toggle('active');
         });
     }
 
-    // IntersectionObserver for slide-up and fade-in animations
+    // Close mobile menu when a link is clicked
+    document.querySelectorAll('.mobile-menu .nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            navbarToggler.classList.remove('active');
+        });
+    });
+
+    // IntersectionObserver for animations
     const elements = document.querySelectorAll('.animate-slide-up, .animate-fade-in');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -42,25 +49,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.1 });
 
     elements.forEach(element => observer.observe(element));
-
-    // Framer Motion animations (with fallback if not loaded)
-    if (window.framer && window.framer.motion) {
-        const { motion } = window.framer;
-        document.querySelectorAll('.motion-div').forEach(div => {
-            const animateType = div.getAttribute('data-animate');
-            const delay = div.getAttribute('data-delay') || 0;
-            motion(div, {
-                initial: { opacity: 0, y: animateType === 'fadeInUp' ? 50 : 0 },
-                animate: { opacity: 1, y: 0 },
-                transition: { duration: 0.5, delay: parseFloat(delay) }
-            });
-        });
-    } else {
-        // Fallback: Apply basic CSS animation if Framer Motion is not available
-        document.querySelectorAll('.motion-div').forEach(div => {
-            div.style.opacity = '1';
-            div.style.transform = 'translateY(0)';
-            div.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-        });
-    }
 });
