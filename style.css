@@ -68,3 +68,178 @@ header p {
         width: 120px;
         height: 80px;
     }
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+}
+
+.animate-slide-up.delay-100 {
+    animation-delay: 0.1s;
+}
+
+.animate-slide-up.delay-200 {
+    animation-delay: 0.2s;
+}
+
+.about-section {
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    padding: 3rem 0;
+    min-height: 100vh;
+}
+.about-section h2 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+.about-section p {
+    font-size: 1.1rem;
+    color: #34495e;
+    line-height: 1.6;
+}
+.section-card {
+    background: white;
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+.section-card:hover {
+    transform: translateY(-5px);
+}
+.section-card h3 {
+    color: #3498db;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+.section-card ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+.section-card ul li {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+.section-card ul li::before {
+    content: "✔";
+    color: #3498db;
+    position: absolute;
+    left: 0;
+}
+.profile-img-about {
+    max-width: 250px;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    display: block;
+    transition: transform 0.3s ease;
+}
+.profile-img-about:hover {
+    transform: scale(1.05);
+}
+.social-links a {
+    margin: 0 10px;
+    font-size: 1.2rem;
+    color: #3498db;
+    text-decoration: none;
+}
+.social-links a:hover {
+    color: #2c3e50;
+}
+@media (max-width: 768px) {
+    .about-section h2 {
+        font-size: 2rem;
+    }
+    .section-card h3 {
+        font-size: 1.5rem;
+    }
+    .profile-img-about {
+        max-width: 200px;
+    }
+}
+
+* Study Materials Section */
+.materials {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.materials h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #376370;
+}
+
+.materials p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.material-list {
+    margin-bottom: 40px;
+}
+
+.material-list h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #376370;
+}
+
+.subject-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.subject {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    text-align: left;
+}
+
+.subject h4 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #376370;
+}
+
+.subject ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.subject ul li {
+    margin-bottom: 10px;
+}
+
+.subject ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.subject ul li a:hover {
+    color: #ff6f61;
+}
